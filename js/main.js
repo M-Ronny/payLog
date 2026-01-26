@@ -23,7 +23,7 @@ function submit() {
 }
 
 class Account {
-  constructor(current) {
+  constructor(current = 0) {
     this.current = current
   }
 
@@ -38,14 +38,37 @@ class Account {
   }
 
   history(earnOrSpent) {
-    const history = document.querySelector('.history')
-    const p = document.createElement('p')
+    // const history = document.querySelector('.history')
+    // const p = document.createElement('p')
 
+    // const date = Date().split(' ').slice(0,4)
+
+    // p.textContent = `${date[0]}, ${date[1]} ${date[2]}, ${date[3]} ${from.value.toUpperCase()}: ${earnOrSpent}`
+    // history.append(p)
+
+    // let storeHistory = JSON.parse(localStorage.getItem('history'))
+    // if (storeHistory === null) {
+    //   storeHistory = []
+    // }
+    // storeHistory.push(p.textContent)
+    // localStorage.setItem('history', JSON.stringify(storeHistory))
     const date = Date().split(' ').slice(0,4)
+    let tran = `${date[0]}, ${date[1]}, ${date[2]}, ${date[3]} ${from.value.toUpperCase()}: ${earnOrSpent}`
+    this.updateHisAndCur(tran, this.current)
+  }
 
-    p.textContent = `${date[0]}, ${date[1]} ${date[2]}, ${date[3]} ${from.value.toUpperCase()}: ${earnOrSpent}`
-    history.append(p)
+  updateHisAndCur(transaction, current) {
+    let storeHistory = JSON.parse(localStorage.getItem('history'))
+    if (storeHistory === null) {
+      storeHistory = []
+    }
+    storeHistory.push(transaction)
+    localStorage.setItem('history', JSON.stringify(storeHistory))
+
+    localStorage.setItem('current', current)
   }
 }
 
- const myAccount = new Account(0)
+myBalance.textContent = `$${Number(localStorage.getItem('current'))}`
+
+const myAccount = new Account(Number(localStorage.getItem('current')))
