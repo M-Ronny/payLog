@@ -15,7 +15,7 @@ function submit() {
   const option = document.querySelector('select').value
   const amount = document.querySelector('.amount').value
 
-  if (isNaN(amount) === true) {
+  if (isNaN(amount) === true || amount === '') {
     error.textContent = 'Amount is not a number. Please enter a number.'
     account.append(error)
   } else if (option === 'income') {
