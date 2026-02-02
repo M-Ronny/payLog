@@ -1,7 +1,7 @@
 document.querySelector('button').addEventListener('click', submit)
 const account = document.querySelector('.account')
 const myBalance = document.querySelector('.myBalance')
-const from = document.querySelector('.for')
+const from = document.querySelector('.description')
 const history = document.querySelector('.history')
 let error = document.createElement('h2')
 

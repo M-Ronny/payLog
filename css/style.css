@@ -10,9 +10,34 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
+.account, .history {
+  float: left;
+  width: 50%;
+}
 
+.account {
+  padding: 5% 10% 10% 10%;
+}
 
-
+.history {
+  padding-top: 5%;
+}
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
+.description, .amount,
+select, button {
+  display: block;
+  width: 75%;
+  height: 40px;
+  border-radius: 5px;
+}
+
+select {
+  text-align: center;
+}
+
+div {
+  overflow-y: auto;
+  height: 300px;
+}
