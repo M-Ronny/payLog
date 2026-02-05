@@ -11,7 +11,9 @@
 /* LAYOUT
 /*******************************************/
 nav {
-  height: 100px;
+  height: 50px;
+  text-align: center;
+  margin-bottom: 5%;
 }
 
 .account, .history {
@@ -21,21 +23,13 @@ nav {
   margin: 0 1%;
   border: solid 10px;
   border-radius: 25px;
+  box-shadow: 1;
   background: rgb(217, 215, 215);
 }
 
 .balance {
-  margin: 13% 0 0 19%;
+  margin: 12% 0 0 19%;
 }
-
-/* .account {
-  padding: 5% 2% 10% 10%;
-  border: solid 1px;
-}
-
-.history {
-  border: solid 1px;
-} */
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
@@ -59,10 +53,6 @@ p, input, select, button {
 
 p, select, button {
   font-weight: bold;
-}
-
-p, .myBalance {
-  color: rgb(52, 158, 207);
 }
 
 select, button {
@@ -94,5 +84,32 @@ p {
   border-bottom: solid 2px black;
   padding-bottom: 20px;
   padding-left: 2%;
+  color: rgb(52, 158, 207)
 }
 
+/******************************************
+/@media
+/*******************************************/
+@media (max-width: 400px) {
+  .transaction {
+    height: 350px;
+  }
+}
+
+@media (max-width: 700px) {
+  .balance {
+    margin-top: 27%;
+  }
+}
+
+@media (max-width: 900px) {
+  .account, .history {
+    float: none;
+    width: auto;
+    margin: 0 10%;
+  }
+
+  .account {
+    margin-bottom: 5%;
+  }
+}
